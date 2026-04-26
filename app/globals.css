@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --grove-forest: #1A3C34;
+  --grove-sage: #A8C5A0;
+  --grove-sage-dim: #6B8565;
+  --grove-gold: #D4A843;
+  --grove-charcoal: #0A0A0A;
+  --grove-panel: #121212;
+  --grove-offwhite: #F7F5F0;
+  --grove-card: rgba(255,255,255,0.025);
+  --grove-card-hover: rgba(255,255,255,0.045);
+  --grove-border: rgba(255,255,255,0.07);
+  --grove-border-sage: rgba(168,197,160,0.14);
+  --grove-text: #F4F2EC;
+  --grove-text-muted: rgba(244,242,236,0.5);
+  --grove-text-dim: rgba(244,242,236,0.3);
+  --grove-branch: #4A6B55;
+  --grove-branch-dim: #2F4A3C;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-grove-forest: var(--grove-forest);
+  --color-grove-sage: var(--grove-sage);
+  --color-grove-sage-dim: var(--grove-sage-dim);
+  --color-grove-gold: var(--grove-gold);
+  --color-grove-charcoal: var(--grove-charcoal);
+  --color-grove-panel: var(--grove-panel);
+  --color-grove-offwhite: var(--grove-offwhite);
+  --color-grove-card: var(--grove-card);
+  --color-grove-card-hover: var(--grove-card-hover);
+  --color-grove-border: var(--grove-border);
+  --color-grove-border-sage: var(--grove-border-sage);
+  --color-grove-text: var(--grove-text);
+  --color-grove-text-muted: var(--grove-text-muted);
+  --color-grove-text-dim: var(--grove-text-dim);
+  --color-grove-branch: var(--grove-branch);
+  --color-grove-branch-dim: var(--grove-branch-dim);
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes pulse-gold {
+  0%, 100% { opacity: 0.18; }
+  50% { opacity: 0.35; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 6px #D4A843; }
+  50% { box-shadow: 0 0 12px #D4A843; }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 3s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--grove-charcoal);
+  color: var(--grove-text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(168,197,160,0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168,197,160,0.35);
 }
