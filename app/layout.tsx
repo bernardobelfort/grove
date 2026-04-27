@@ -26,9 +26,9 @@ export default function RootLayout({
         <title>Grove - Onboarding Inteligente</title>
         <meta name="description" content="Plataforma de onboarding inteligente" />
       </head>
-      <body className="min-h-screen flex bg-grove-charcoal text-grove-text font-sans">
+      <body className="h-screen flex overflow-hidden bg-grove-charcoal text-grove-text font-sans">
         <Sidebar />
-        <main className="flex-1 min-w-0 overflow-hidden">
+        <main className="flex-1 min-w-0 overflow-hidden bg-gradient-to-br from-[#0a1210] to-[#070b09]">
           {children}
         </main>
       </body>

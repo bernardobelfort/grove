@@ -23,10 +23,10 @@ export default function TrailPage() {
       transition={{ duration: 0.2 }}
       className="h-screen flex"
     >
-      <div className="w-[240px] flex-shrink-0 bg-grove-panel border-r border-grove-border flex flex-col overflow-hidden">
-        <div className="p-4 border-b border-grove-border">
-          <div className="text-[13px] font-semibold tracking-tight">Sua Trilha</div>
-          <div className="text-[10px] text-grove-text-muted mt-0.5">Progresso de onboarding</div>
+      <div className="w-[260px] flex-shrink-0 border-r border-grove-border flex flex-col overflow-hidden" style={{ background: 'linear-gradient(180deg, #0c1a14 0%, #091210 100%)' }}>
+        <div className="p-4 border-b border-white/[0.04]">
+          <div className="text-[14px] font-semibold tracking-tight">Sua Trilha</div>
+          <div className="text-[10px] text-grove-text-muted mt-1">Progresso de onboarding</div>
         </div>
         <div className="flex-1 overflow-auto p-4">
           <TrailTimeline steps={trailSteps} />
@@ -95,24 +95,24 @@ export default function TrailPage() {
           </div>
         </div>
 
-        <div className="p-5 border-t border-grove-border flex-shrink-0 bg-gradient-to-b from-grove-panel/30 to-grove-charcoal">
+        <div className="p-5 border-t border-white/[0.05] flex-shrink-0" style={{ background: 'linear-gradient(180deg, rgba(12,26,20,0.5) 0%, #070b09 100%)' }}>
           <div className="max-w-[680px] mx-auto">
             <div className="text-[12px] font-semibold mb-2">Reflexao</div>
-            <div className="text-[12px] text-grove-text/85 mb-3 leading-relaxed">
+            <div className="text-[12px] text-grove-text/80 mb-3 leading-relaxed">
               {currentStepContent.checkpointQuestion}
             </div>
             {!submitted ? (
-              <div className="flex gap-2.5">
+              <div className="flex gap-3">
                 <input
                   type="text"
                   placeholder="Compartilhe seu raciocinio..."
                   value={checkpointAnswer}
                   onChange={(e) => setCheckpointAnswer(e.target.value)}
-                  className="flex-1 px-3.5 py-2.5 bg-white/[0.04] border border-grove-border-sage rounded-lg text-grove-text text-[11px] placeholder:text-grove-text-muted/50 outline-none focus:border-grove-sage/40 transition-colors"
+                  className="flex-1 px-4 py-3 bg-white/[0.03] border border-white/[0.08] rounded-xl text-grove-text text-[12px] placeholder:text-grove-text-dim focus:border-grove-sage/30 transition-colors"
                 />
                 <button
                   onClick={handleSubmit}
-                  className="px-4 py-2.5 rounded-lg bg-grove-sage text-grove-charcoal text-[11px] font-semibold hover:bg-grove-sage/90 transition-colors"
+                  className="px-5 py-3 rounded-xl bg-grove-sage text-grove-charcoal text-[12px] font-semibold hover:bg-grove-sage/90 transition-colors shadow-lg"
                 >
                   Enviar resposta
                 </button>
@@ -121,11 +121,11 @@ export default function TrailPage() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-center gap-2.5 p-3.5 bg-grove-sage/10 border border-grove-sage/20 rounded-lg"
+                className="flex items-center gap-3 p-4 bg-grove-sage/10 border border-grove-sage/20 rounded-xl"
               >
-                <CheckCircle2 size={18} className="text-grove-sage" />
+                <CheckCircle2 size={20} className="text-grove-sage flex-shrink-0" />
                 <div>
-                  <div className="text-[11px] text-grove-sage font-medium">Resposta enviada</div>
+                  <div className="text-[12px] text-grove-sage font-medium">Resposta enviada</div>
                   <div className="text-[10px] text-grove-text-muted mt-0.5">Sua resposta esta sendo analisada para otimizar os proximos passos.</div>
                 </div>
               </motion.div>

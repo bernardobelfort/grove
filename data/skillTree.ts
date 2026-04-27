@@ -68,3 +68,12 @@ export function getStageIndex(day: number): number {
   if (day >= 7) return 1;
   return 0;
 }
+
+export function getStageFromProgress(progress: number): TreeStage {
+  if (progress >= 85) return 'grove';
+  if (progress >= 70) return 'mature';
+  if (progress >= 50) return 'growing';
+  if (progress >= 35) return 'sapling';
+  if (progress >= 20) return 'sprout';
+  return 'seed';
+}

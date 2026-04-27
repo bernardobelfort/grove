@@ -362,117 +362,116 @@ function GroveTree() {
   return (
     <svg viewBox="0 0 400 360" className="w-full h-full">
       <defs>
-        <radialGradient id="groveGlow1" cx="50%" cy="90%" r="70%">
-          <stop offset="0%" stopColor={SAGE} stopOpacity="0.15" />
-          <stop offset="50%" stopColor={SAGE} stopOpacity="0.05" />
+        <radialGradient id="groveGlow1" cx="50%" cy="85%" r="60%">
+          <stop offset="0%" stopColor={SAGE} stopOpacity="0.12" />
+          <stop offset="60%" stopColor={SAGE} stopOpacity="0.04" />
           <stop offset="100%" stopColor={SAGE} stopOpacity="0" />
         </radialGradient>
-        <radialGradient id="groveGlow2" cx="50%" cy="30%" r="50%">
-          <stop offset="0%" stopColor={GOLD} stopOpacity="0.08" />
+        <radialGradient id="groveGlow2" cx="50%" cy="20%" r="40%">
+          <stop offset="0%" stopColor={GOLD} stopOpacity="0.1" />
           <stop offset="100%" stopColor={GOLD} stopOpacity="0" />
         </radialGradient>
       </defs>
 
-      <ellipse cx="200" cy="320" rx="195" ry="100" fill="url(#groveGlow1)" />
-      <ellipse cx="200" cy="100" rx="120" ry="80" fill="url(#groveGlow2)" />
+      <ellipse cx="200" cy="330" rx="150" ry="60" fill="url(#groveGlow1)" />
+      <ellipse cx="200" cy="80" rx="100" ry="60" fill="url(#groveGlow2)" />
 
-      <path d="M 200 350 Q 200 290 200 220" stroke={BRANCH} strokeWidth="6" strokeLinecap="round" fill="none" />
+      {/* Tronco principal - elegante e centrado */}
+      <path d="M 200 340 Q 200 280 200 180" stroke={BRANCH} strokeWidth="6" strokeLinecap="round" fill="none" />
 
-      <path d="M 200 320 Q 100 280 25 220" stroke={BRANCH} strokeWidth="4.5" strokeLinecap="round" fill="none" />
-      <path d="M 25 220 Q 5 195 -5 160" stroke={BRANCH} strokeWidth="3.5" strokeLinecap="round" fill="none" />
-      <path d="M 25 220 Q 15 250 10 290" stroke={BRANCH} strokeWidth="3" strokeLinecap="round" fill="none" />
-      <path d="M 10 290 Q 5 320 8 345" stroke={BRANCH_DIM} strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.5" />
-      <path d="M 25 220 Q 40 200 55 175" stroke={BRANCH} strokeWidth="2.5" strokeLinecap="round" fill="none" />
-      <path d="M 55 175 Q 45 155 35 130" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
+      {/* Galhos principais - nível 1 (base) - simétricos e elegantes */}
+      <path d="M 200 300 Q 140 270 90 240" stroke={BRANCH} strokeWidth="4" strokeLinecap="round" fill="none" />
+      <path d="M 90 240 Q 60 220 40 195" stroke={BRANCH} strokeWidth="3" strokeLinecap="round" fill="none" />
+      <path d="M 40 195 Q 25 175 20 150" stroke={BRANCH} strokeWidth="2.5" strokeLinecap="round" fill="none" />
 
-      <path d="M 200 320 Q 300 280 375 220" stroke={BRANCH} strokeWidth="4.5" strokeLinecap="round" fill="none" />
-      <path d="M 375 220 Q 395 195 405 160" stroke={BRANCH} strokeWidth="3.5" strokeLinecap="round" fill="none" />
-      <path d="M 375 220 Q 385 250 390 290" stroke={BRANCH} strokeWidth="3" strokeLinecap="round" fill="none" />
-      <path d="M 390 290 Q 395 320 392 345" stroke={BRANCH_DIM} strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.5" />
-      <path d="M 375 220 Q 360 200 345 175" stroke={BRANCH} strokeWidth="2.5" strokeLinecap="round" fill="none" />
-      <path d="M 345 175 Q 355 155 365 130" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path d="M 200 300 Q 260 270 310 240" stroke={BRANCH} strokeWidth="4" strokeLinecap="round" fill="none" />
+      <path d="M 310 240 Q 340 220 360 195" stroke={BRANCH} strokeWidth="3" strokeLinecap="round" fill="none" />
+      <path d="M 360 195 Q 375 175 380 150" stroke={BRANCH} strokeWidth="2.5" strokeLinecap="round" fill="none" />
 
-      <path d="M 200 290 Q 120 250 60 200" stroke={BRANCH} strokeWidth="4" strokeLinecap="round" fill="none" />
-      <path d="M 60 200 Q 35 175 20 140" stroke={BRANCH} strokeWidth="3" strokeLinecap="round" fill="none" />
-      <path d="M 60 200 Q 50 230 45 265" stroke={BRANCH_DIM} strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.6" />
-      <path d="M 20 140 Q 10 120 5 95" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
+      {/* Galhos nível 2 - mais altos */}
+      <path d="M 200 260 Q 150 230 110 195" stroke={BRANCH} strokeWidth="3.5" strokeLinecap="round" fill="none" />
+      <path d="M 110 195 Q 85 170 65 140" stroke={BRANCH} strokeWidth="2.8" strokeLinecap="round" fill="none" />
+      <path d="M 65 140 Q 50 115 45 90" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
 
-      <path d="M 200 290 Q 280 250 340 200" stroke={BRANCH} strokeWidth="4" strokeLinecap="round" fill="none" />
-      <path d="M 340 200 Q 365 175 380 140" stroke={BRANCH} strokeWidth="3" strokeLinecap="round" fill="none" />
-      <path d="M 340 200 Q 350 230 355 265" stroke={BRANCH_DIM} strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.6" />
-      <path d="M 380 140 Q 390 120 395 95" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path d="M 200 260 Q 250 230 290 195" stroke={BRANCH} strokeWidth="3.5" strokeLinecap="round" fill="none" />
+      <path d="M 290 195 Q 315 170 335 140" stroke={BRANCH} strokeWidth="2.8" strokeLinecap="round" fill="none" />
+      <path d="M 335 140 Q 350 115 355 90" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
 
-      <path d="M 200 260 Q 140 215 95 165" stroke={BRANCH} strokeWidth="3.5" strokeLinecap="round" fill="none" />
-      <path d="M 95 165 Q 70 140 50 105" stroke={BRANCH} strokeWidth="2.5" strokeLinecap="round" fill="none" />
-      <path d="M 95 165 Q 80 185 70 210" stroke={BRANCH_DIM} strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.6" />
-      <path d="M 50 105 Q 40 85 35 60" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
+      {/* Galhos nível 3 - copa */}
+      <path d="M 200 220 Q 160 190 130 155" stroke={BRANCH} strokeWidth="3" strokeLinecap="round" fill="none" />
+      <path d="M 130 155 Q 110 130 95 100" stroke={BRANCH} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      <path d="M 95 100 Q 85 80 80 55" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
 
-      <path d="M 200 260 Q 260 215 305 165" stroke={BRANCH} strokeWidth="3.5" strokeLinecap="round" fill="none" />
-      <path d="M 305 165 Q 330 140 350 105" stroke={BRANCH} strokeWidth="2.5" strokeLinecap="round" fill="none" />
-      <path d="M 305 165 Q 320 185 330 210" stroke={BRANCH_DIM} strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.6" />
-      <path d="M 350 105 Q 360 85 365 60" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path d="M 200 220 Q 240 190 270 155" stroke={BRANCH} strokeWidth="3" strokeLinecap="round" fill="none" />
+      <path d="M 270 155 Q 290 130 305 100" stroke={BRANCH} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      <path d="M 305 100 Q 315 80 320 55" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
 
-      <path d="M 200 240 Q 160 195 130 145" stroke={BRANCH} strokeWidth="3" strokeLinecap="round" fill="none" />
-      <path d="M 130 145 Q 110 115 100 80" stroke={BRANCH} strokeWidth="2.5" strokeLinecap="round" fill="none" />
-      <path d="M 130 145 Q 110 150 90 160" stroke={BRANCH_DIM} strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
-      <path d="M 100 80 Q 90 60 85 35" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
+      {/* Galhos centrais - topo da árvore */}
+      <path d="M 200 200 Q 200 160 200 120" stroke={BRANCH} strokeWidth="3" strokeLinecap="round" fill="none" />
+      <path d="M 200 120 Q 200 90 200 55" stroke={BRANCH} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      <path d="M 200 55 Q 200 40 200 25" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
 
-      <path d="M 200 240 Q 240 195 270 145" stroke={BRANCH} strokeWidth="3" strokeLinecap="round" fill="none" />
-      <path d="M 270 145 Q 290 115 300 80" stroke={BRANCH} strokeWidth="2.5" strokeLinecap="round" fill="none" />
-      <path d="M 270 145 Q 290 150 310 160" stroke={BRANCH_DIM} strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
-      <path d="M 300 80 Q 310 60 315 35" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
+      {/* Ramificações delicadas do topo */}
+      <path d="M 200 140 Q 175 120 155 95" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path d="M 155 95 Q 145 80 140 60" stroke={BRANCH} strokeWidth="1.5" strokeLinecap="round" fill="none" />
 
-      <path d="M 200 230 Q 200 180 200 130" stroke={BRANCH} strokeWidth="3" strokeLinecap="round" fill="none" />
-      <path d="M 200 130 Q 200 100 200 65" stroke={BRANCH} strokeWidth="2.5" strokeLinecap="round" fill="none" />
-      <path d="M 200 65 Q 200 45 200 25" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path d="M 200 140 Q 225 120 245 95" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path d="M 245 95 Q 255 80 260 60" stroke={BRANCH} strokeWidth="1.5" strokeLinecap="round" fill="none" />
 
-      <path d="M 200 160 Q 170 130 150 95" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
-      <path d="M 150 95 Q 140 75 135 50" stroke={BRANCH} strokeWidth="1.5" strokeLinecap="round" fill="none" />
-      <path d="M 200 160 Q 230 130 250 95" stroke={BRANCH} strokeWidth="2" strokeLinecap="round" fill="none" />
-      <path d="M 250 95 Q 260 75 265 50" stroke={BRANCH} strokeWidth="1.5" strokeLinecap="round" fill="none" />
+      {/* Sub-ramificações elegantes */}
+      <path d="M 90 240 Q 75 255 60 270" stroke={BRANCH_DIM} strokeWidth="1.8" strokeLinecap="round" fill="none" opacity="0.6" />
+      <path d="M 310 240 Q 325 255 340 270" stroke={BRANCH_DIM} strokeWidth="1.8" strokeLinecap="round" fill="none" opacity="0.6" />
 
-      <circle cx="200" cy="350" r="6" fill={BRANCH} />
+      <path d="M 110 195 Q 95 210 85 230" stroke={BRANCH_DIM} strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.5" />
+      <path d="M 290 195 Q 305 210 315 230" stroke={BRANCH_DIM} strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.5" />
 
-      <SkillDot x={-5} y={160} name="Arquitetura" status="mastered" />
-      <SkillDot x={25} y={220} name="APIs REST" status="mastered" />
-      <SkillDot x={10} y={290} name="GraphQL" status="mastered" />
-      <SkillDot x={60} y={200} name="Microservices" status="mastered" />
-      <SkillDot x={45} y={265} name="Event Sourcing" status="mastered" />
-      <SkillDot x={35} y={130} name="DDD" status="mastered" />
+      {/* Base/raiz */}
+      <ellipse cx="200" cy="342" rx="12" ry="4" fill={BRANCH} opacity="0.4" />
 
-      <SkillDot x={405} y={160} name="Valores" status="mastered" />
-      <SkillDot x={375} y={220} name="Comunicacao" status="mastered" />
-      <SkillDot x={390} y={290} name="Feedback" status="mastered" />
-      <SkillDot x={340} y={200} name="Lideranca" status="mastered" />
-      <SkillDot x={355} y={265} name="Mentoria" status="mastered" />
-      <SkillDot x={365} y={130} name="Coaching" status="mastered" />
+      {/* Habilidades distribuídas harmonicamente */}
+      {/* Lado esquerdo - Engenharia */}
+      <SkillDot x={20} y={150} name="Arquitetura" status="mastered" />
+      <SkillDot x={40} y={195} name="APIs REST" status="mastered" />
+      <SkillDot x={60} y={270} name="GraphQL" status="mastered" />
+      <SkillDot x={90} y={240} name="Microservices" status="mastered" />
+      <SkillDot x={65} y={140} name="System Design" status="mastered" />
+      <SkillDot x={45} y={90} name="DDD" status="mastered" />
 
-      <SkillDot x={50} y={105} name="System Design" status="mastered" />
-      <SkillDot x={95} y={165} name="Docker" status="mastered" />
-      <SkillDot x={35} y={60} name="Terraform" status="mastered" />
-      <SkillDot x={5} y={95} name="AWS" status="mastered" />
+      {/* Lado direito - Cultura */}
+      <SkillDot x={380} y={150} name="Valores" status="mastered" />
+      <SkillDot x={360} y={195} name="Comunicacao" status="mastered" />
+      <SkillDot x={340} y={270} name="Feedback" status="mastered" />
+      <SkillDot x={310} y={240} name="Lideranca" status="mastered" />
+      <SkillDot x={335} y={140} name="Mentoria" status="mastered" />
+      <SkillDot x={355} y={90} name="Coaching" status="mastered" />
 
-      <SkillDot x={350} y={105} name="Product Sense" status="mastered" />
-      <SkillDot x={305} y={165} name="OKRs" status="mastered" />
-      <SkillDot x={365} y={60} name="Roadmap" status="mastered" />
-      <SkillDot x={395} y={95} name="Stakeholders" status="mastered" />
+      {/* Meio-esquerda - Processos */}
+      <SkillDot x={110} y={195} name="Docker" status="mastered" />
+      <SkillDot x={95} y={100} name="Kubernetes" status="mastered" />
+      <SkillDot x={80} y={55} name="Terraform" status="mastered" />
+      <SkillDot x={130} y={155} name="CI/CD" status="mastered" />
 
+      {/* Meio-direita - Ferramentas */}
+      <SkillDot x={290} y={195} name="OKRs" status="mastered" />
+      <SkillDot x={305} y={100} name="Product" status="mastered" />
+      <SkillDot x={320} y={55} name="Roadmap" status="mastered" />
+      <SkillDot x={270} y={155} name="Strategy" status="mastered" />
+
+      {/* Centro - Carreira */}
       <SkillDot x={200} y={25} name="CTO Track" status="in_progress" />
-      <SkillDot x={200} y={65} name="VP Engineering" status="mastered" />
-      <SkillDot x={200} y={130} name="Staff Engineer" status="mastered" />
-      <SkillDot x={200} y={230} name="Tech Lead" status="mastered" />
+      <SkillDot x={200} y={55} name="VP Engineering" status="mastered" />
+      <SkillDot x={200} y={120} name="Staff Engineer" status="mastered" />
+      <SkillDot x={200} y={200} name="Tech Lead" status="mastered" />
 
-      <SkillDot x={100} y={80} name="Distributed" status="mastered" />
-      <SkillDot x={85} y={35} name="ML Ops" status="mastered" />
-      <SkillDot x={300} y={80} name="Data Platform" status="mastered" />
-      <SkillDot x={315} y={35} name="Platform Eng" status="mastered" />
+      {/* Ramificações do topo */}
+      <SkillDot x={155} y={95} name="Culture" status="mastered" />
+      <SkillDot x={245} y={95} name="Vision" status="mastered" />
+      <SkillDot x={140} y={60} name="Innovation" status="mastered" />
+      <SkillDot x={260} y={60} name="Excellence" status="mastered" />
 
-      <SkillDot x={130} y={145} name="Architecture" status="mastered" />
-      <SkillDot x={270} y={145} name="Scale" status="mastered" />
-      <SkillDot x={150} y={95} name="Culture" status="mastered" />
-      <SkillDot x={250} y={95} name="Vision" status="mastered" />
-      <SkillDot x={135} y={50} name="Innovation" status="mastered" />
-      <SkillDot x={265} y={50} name="Excellence" status="mastered" />
+      {/* Sub-ramos */}
+      <SkillDot x={85} y={230} name="AWS" status="mastered" />
+      <SkillDot x={315} y={230} name="Stakeholders" status="mastered" />
     </svg>
   );
 }

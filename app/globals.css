@@ -5,16 +5,16 @@
   --grove-sage: #A8C5A0;
   --grove-sage-dim: #6B8565;
   --grove-gold: #D4A843;
-  --grove-charcoal: #0A0A0A;
-  --grove-panel: #121212;
+  --grove-charcoal: #070b09;
+  --grove-panel: #0c1210;
   --grove-offwhite: #F7F5F0;
-  --grove-card: rgba(255,255,255,0.025);
-  --grove-card-hover: rgba(255,255,255,0.045);
-  --grove-border: rgba(255,255,255,0.07);
-  --grove-border-sage: rgba(168,197,160,0.14);
+  --grove-card: rgba(255,255,255,0.02);
+  --grove-card-hover: rgba(255,255,255,0.035);
+  --grove-border: rgba(255,255,255,0.06);
+  --grove-border-sage: rgba(168,197,160,0.12);
   --grove-text: #F4F2EC;
   --grove-text-muted: rgba(244,242,236,0.5);
-  --grove-text-dim: rgba(244,242,236,0.3);
+  --grove-text-dim: rgba(244,242,236,0.25);
   --grove-branch: #4A6B55;
   --grove-branch-dim: #2F4A3C;
 }
@@ -65,6 +65,29 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(168,197,160,0.3);
+  color: var(--grove-text);
+}
+
+input, button, textarea, select {
+  font-family: inherit;
+}
+
+input:focus, button:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 ::-webkit-scrollbar {

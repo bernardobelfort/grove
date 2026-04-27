@@ -33,15 +33,15 @@ export default function InsightsPage() {
         )}
       </AnimatePresence>
 
-      <div className="px-6 py-4 border-b border-grove-border">
+      <div className="px-6 py-5 border-b border-grove-border">
         <div className="flex justify-between items-center">
           <div>
-            <div className="text-[18px] font-semibold tracking-tight">Decisoes da trilha</div>
-            <div className="text-[11px] text-grove-text-muted mt-0.5">
+            <div className="text-[20px] font-semibold tracking-tight">Decisoes da trilha</div>
+            <div className="text-[11px] text-grove-text-muted mt-1">
               Cada mudanca na sua trilha e registrada aqui. Voce pode reverter qualquer uma.
             </div>
           </div>
-          <select className="px-3.5 py-2 bg-grove-card border border-grove-border rounded-lg text-[11px] text-grove-text-muted outline-none cursor-pointer hover:border-grove-sage/20 transition-colors">
+          <select className="px-4 py-2.5 bg-white/[0.03] border border-grove-border rounded-xl text-[11px] text-grove-text-muted cursor-pointer hover:border-grove-sage/20 transition-colors focus:outline-none focus:border-grove-sage/30">
             <option>Todos os tipos</option>
             <option>Adicionados</option>
             <option>Removidos</option>

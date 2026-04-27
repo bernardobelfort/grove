@@ -32,7 +32,7 @@ export default function AiInsightCard({ insight, onUndo }: AiInsightCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: undone ? 0.5 : 1, y: 0 }}
-      className={`p-3.5 bg-grove-card-hover border border-grove-border rounded-xl flex gap-3.5 relative transition-opacity ${
+      className={`p-4 bg-white/[0.02] border border-grove-border rounded-xl flex gap-4 relative transition-all hover:border-white/[0.1] ${
         undone ? 'opacity-50' : ''
       }`}
     >

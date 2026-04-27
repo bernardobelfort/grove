@@ -3,7 +3,6 @@
 const SAGE = '#A8C5A0';
 const GOLD = '#D4A843';
 const BRANCH = '#3D5A4A';
-const BRANCH_DIM = '#2A3D32';
 
 interface MiniTreeProps {
   progress?: number;
@@ -21,107 +20,117 @@ function getStage(progress: number): 0 | 1 | 2 | 3 | 4 | 5 {
 
 export default function MiniTree({ progress = 30, size = 32 }: MiniTreeProps) {
   const stage = getStage(progress);
-  const scale = 0.4;
-  const viewBox = "0 0 32 44";
+  const height = size * 1.375;
 
   const renderStage = () => {
     switch (stage) {
       case 0:
         return (
           <g>
-            <path d={`M ${40*scale} ${92*scale} L ${40*scale} ${78*scale}`} stroke={BRANCH} strokeWidth={2.5*scale} strokeLinecap="round" />
-            <circle cx={40*scale} cy={78*scale} r={4*scale} fill={SAGE} opacity="0.8" />
+            <path d="M 16 28 L 16 22" stroke={BRANCH} strokeWidth={2} strokeLinecap="round" />
+            <circle cx={16} cy={21} r={3} fill={SAGE} opacity="0.8" />
           </g>
         );
       case 1:
         return (
           <g>
-            <path d={`M ${40*scale} ${92*scale} L ${40*scale} ${65*scale}`} stroke={BRANCH} strokeWidth={2.5*scale} strokeLinecap="round" />
-            <path d={`M ${40*scale} ${75*scale} Q ${30*scale} ${68*scale} ${22*scale} ${62*scale}`} stroke={BRANCH} strokeWidth={2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${75*scale} Q ${50*scale} ${68*scale} ${58*scale} ${62*scale}`} stroke={BRANCH} strokeWidth={2*scale} strokeLinecap="round" fill="none" />
-            <circle cx={40*scale} cy={65*scale} r={3.5*scale} fill={SAGE} opacity="0.85" />
-            <circle cx={22*scale} cy={62*scale} r={3*scale} fill={SAGE} opacity="0.8" />
-            <circle cx={58*scale} cy={62*scale} r={3*scale} fill={GOLD} opacity="0.9" />
+            <path d="M 16 28 L 16 16" stroke={BRANCH} strokeWidth={2} strokeLinecap="round" />
+            <path d="M 16 22 Q 11 19 8 17" stroke={BRANCH} strokeWidth={1.5} strokeLinecap="round" fill="none" />
+            <path d="M 16 22 Q 21 19 24 17" stroke={BRANCH} strokeWidth={1.5} strokeLinecap="round" fill="none" />
+            <circle cx={16} cy={15} r={2.5} fill={SAGE} opacity="0.85" />
+            <circle cx={8} cy={17} r={2} fill={SAGE} opacity="0.8" />
+            <circle cx={24} cy={17} r={2} fill={GOLD} opacity="0.9" />
           </g>
         );
       case 2:
         return (
           <g>
-            <path d={`M ${40*scale} ${92*scale} L ${40*scale} ${55*scale}`} stroke={BRANCH} strokeWidth={2.5*scale} strokeLinecap="round" />
-            <path d={`M ${40*scale} ${78*scale} Q ${26*scale} ${70*scale} ${15*scale} ${62*scale}`} stroke={BRANCH} strokeWidth={2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${78*scale} Q ${54*scale} ${70*scale} ${65*scale} ${62*scale}`} stroke={BRANCH} strokeWidth={2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${65*scale} Q ${30*scale} ${58*scale} ${22*scale} ${50*scale}`} stroke={BRANCH} strokeWidth={1.8*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${65*scale} Q ${50*scale} ${58*scale} ${58*scale} ${50*scale}`} stroke={BRANCH} strokeWidth={1.8*scale} strokeLinecap="round" fill="none" />
-            <circle cx={40*scale} cy={55*scale} r={3.5*scale} fill={SAGE} opacity="0.85" />
-            <circle cx={15*scale} cy={62*scale} r={3*scale} fill={GOLD} opacity="0.95" />
-            <circle cx={65*scale} cy={62*scale} r={3*scale} fill={SAGE} opacity="0.8" />
-            <circle cx={22*scale} cy={50*scale} r={2.5*scale} fill={SAGE} opacity="0.75" />
-            <circle cx={58*scale} cy={50*scale} r={2.5*scale} fill={GOLD} opacity="0.9" />
+            <path d="M 16 28 L 16 12" stroke={BRANCH} strokeWidth={2} strokeLinecap="round" />
+            <path d="M 16 24 Q 9 20 5 17" stroke={BRANCH} strokeWidth={1.5} strokeLinecap="round" fill="none" />
+            <path d="M 16 24 Q 23 20 27 17" stroke={BRANCH} strokeWidth={1.5} strokeLinecap="round" fill="none" />
+            <path d="M 16 18 Q 12 15 9 12" stroke={BRANCH} strokeWidth={1.2} strokeLinecap="round" fill="none" />
+            <path d="M 16 18 Q 20 15 23 12" stroke={BRANCH} strokeWidth={1.2} strokeLinecap="round" fill="none" />
+            <circle cx={16} cy={11} r={2.5} fill={SAGE} opacity="0.85" />
+            <circle cx={5} cy={17} r={2} fill={GOLD} opacity="0.95" />
+            <circle cx={27} cy={17} r={2} fill={SAGE} opacity="0.8" />
+            <circle cx={9} cy={12} r={1.8} fill={SAGE} opacity="0.75" />
+            <circle cx={23} cy={12} r={1.8} fill={GOLD} opacity="0.9" />
           </g>
         );
       case 3:
         return (
           <g>
-            <path d={`M ${40*scale} ${92*scale} L ${40*scale} ${45*scale}`} stroke={BRANCH} strokeWidth={3*scale} strokeLinecap="round" />
-            <path d={`M ${40*scale} ${82*scale} Q ${22*scale} ${74*scale} ${10*scale} ${65*scale}`} stroke={BRANCH} strokeWidth={2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${82*scale} Q ${58*scale} ${74*scale} ${70*scale} ${65*scale}`} stroke={BRANCH} strokeWidth={2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${68*scale} Q ${26*scale} ${60*scale} ${15*scale} ${50*scale}`} stroke={BRANCH} strokeWidth={1.8*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${68*scale} Q ${54*scale} ${60*scale} ${65*scale} ${50*scale}`} stroke={BRANCH} strokeWidth={1.8*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${55*scale} Q ${32*scale} ${48*scale} ${25*scale} ${38*scale}`} stroke={BRANCH} strokeWidth={1.5*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${55*scale} Q ${48*scale} ${48*scale} ${55*scale} ${38*scale}`} stroke={BRANCH} strokeWidth={1.5*scale} strokeLinecap="round" fill="none" />
-            <circle cx={40*scale} cy={45*scale} r={3.5*scale} fill={SAGE} opacity="0.85" />
-            <circle cx={10*scale} cy={65*scale} r={3*scale} fill={GOLD} opacity="0.95" />
-            <circle cx={70*scale} cy={65*scale} r={3*scale} fill={GOLD} opacity="0.95" />
-            <circle cx={15*scale} cy={50*scale} r={2.5*scale} fill={SAGE} opacity="0.85" />
-            <circle cx={65*scale} cy={50*scale} r={2.5*scale} fill={SAGE} opacity="0.85" />
-            <circle cx={25*scale} cy={38*scale} r={2.5*scale} fill={SAGE} opacity="0.75" />
-            <circle cx={55*scale} cy={38*scale} r={2.5*scale} fill={SAGE} opacity="0.75" />
+            <path d="M 16 28 L 16 9" stroke={BRANCH} strokeWidth={2.2} strokeLinecap="round" />
+            <path d="M 16 25 Q 8 21 4 17" stroke={BRANCH} strokeWidth={1.5} strokeLinecap="round" fill="none" />
+            <path d="M 16 25 Q 24 21 28 17" stroke={BRANCH} strokeWidth={1.5} strokeLinecap="round" fill="none" />
+            <path d="M 16 20 Q 10 16 6 12" stroke={BRANCH} strokeWidth={1.3} strokeLinecap="round" fill="none" />
+            <path d="M 16 20 Q 22 16 26 12" stroke={BRANCH} strokeWidth={1.3} strokeLinecap="round" fill="none" />
+            <path d="M 16 14 Q 13 11 10 8" stroke={BRANCH} strokeWidth={1.1} strokeLinecap="round" fill="none" />
+            <path d="M 16 14 Q 19 11 22 8" stroke={BRANCH} strokeWidth={1.1} strokeLinecap="round" fill="none" />
+            <circle cx={16} cy={8} r={2.5} fill={SAGE} opacity="0.85" />
+            <circle cx={4} cy={17} r={2} fill={GOLD} opacity="0.95" />
+            <circle cx={28} cy={17} r={2} fill={GOLD} opacity="0.95" />
+            <circle cx={6} cy={12} r={1.8} fill={SAGE} opacity="0.85" />
+            <circle cx={26} cy={12} r={1.8} fill={SAGE} opacity="0.85" />
+            <circle cx={10} cy={8} r={1.6} fill={SAGE} opacity="0.75" />
+            <circle cx={22} cy={8} r={1.6} fill={SAGE} opacity="0.75" />
           </g>
         );
       case 4:
         return (
           <g>
-            <path d={`M ${40*scale} ${92*scale} L ${40*scale} ${35*scale}`} stroke={BRANCH} strokeWidth={3*scale} strokeLinecap="round" />
-            <path d={`M ${40*scale} ${85*scale} Q ${18*scale} ${76*scale} ${8*scale} ${65*scale}`} stroke={BRANCH} strokeWidth={2.2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${85*scale} Q ${62*scale} ${76*scale} ${72*scale} ${65*scale}`} stroke={BRANCH} strokeWidth={2.2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${70*scale} Q ${22*scale} ${62*scale} ${12*scale} ${50*scale}`} stroke={BRANCH} strokeWidth={2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${70*scale} Q ${58*scale} ${62*scale} ${68*scale} ${50*scale}`} stroke={BRANCH} strokeWidth={2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${55*scale} Q ${28*scale} ${46*scale} ${18*scale} ${35*scale}`} stroke={BRANCH} strokeWidth={1.8*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${55*scale} Q ${52*scale} ${46*scale} ${62*scale} ${35*scale}`} stroke={BRANCH} strokeWidth={1.8*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${42*scale} Q ${34*scale} ${34*scale} ${28*scale} ${24*scale}`} stroke={BRANCH} strokeWidth={1.5*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${42*scale} Q ${46*scale} ${34*scale} ${52*scale} ${24*scale}`} stroke={BRANCH} strokeWidth={1.5*scale} strokeLinecap="round" fill="none" />
-            <circle cx={40*scale} cy={35*scale} r={4*scale} fill={GOLD} opacity="0.95" />
-            <circle cx={8*scale} cy={65*scale} r={3*scale} fill={GOLD} opacity="0.95" />
-            <circle cx={72*scale} cy={65*scale} r={3*scale} fill={GOLD} opacity="0.95" />
-            <circle cx={12*scale} cy={50*scale} r={2.5*scale} fill={SAGE} opacity="0.85" />
-            <circle cx={68*scale} cy={50*scale} r={2.5*scale} fill={SAGE} opacity="0.85" />
-            <circle cx={18*scale} cy={35*scale} r={2.5*scale} fill={SAGE} opacity="0.8" />
-            <circle cx={62*scale} cy={35*scale} r={2.5*scale} fill={SAGE} opacity="0.8" />
-            <circle cx={28*scale} cy={24*scale} r={2.5*scale} fill={SAGE} opacity="0.75" />
-            <circle cx={52*scale} cy={24*scale} r={2.5*scale} fill={SAGE} opacity="0.75" />
+            <path d="M 16 28 L 16 6" stroke={BRANCH} strokeWidth={2.2} strokeLinecap="round" />
+            <path d="M 16 26 Q 6 21 2 16" stroke={BRANCH} strokeWidth={1.6} strokeLinecap="round" fill="none" />
+            <path d="M 16 26 Q 26 21 30 16" stroke={BRANCH} strokeWidth={1.6} strokeLinecap="round" fill="none" />
+            <path d="M 16 21 Q 8 17 4 12" stroke={BRANCH} strokeWidth={1.4} strokeLinecap="round" fill="none" />
+            <path d="M 16 21 Q 24 17 28 12" stroke={BRANCH} strokeWidth={1.4} strokeLinecap="round" fill="none" />
+            <path d="M 16 15 Q 11 11 7 7" stroke={BRANCH} strokeWidth={1.2} strokeLinecap="round" fill="none" />
+            <path d="M 16 15 Q 21 11 25 7" stroke={BRANCH} strokeWidth={1.2} strokeLinecap="round" fill="none" />
+            <path d="M 16 10 Q 13 7 11 4" stroke={BRANCH} strokeWidth={1} strokeLinecap="round" fill="none" />
+            <path d="M 16 10 Q 19 7 21 4" stroke={BRANCH} strokeWidth={1} strokeLinecap="round" fill="none" />
+            <circle cx={16} cy={5} r={2.8} fill={GOLD} opacity="0.95" />
+            <circle cx={2} cy={16} r={2} fill={GOLD} opacity="0.95" />
+            <circle cx={30} cy={16} r={2} fill={GOLD} opacity="0.95" />
+            <circle cx={4} cy={12} r={1.8} fill={SAGE} opacity="0.85" />
+            <circle cx={28} cy={12} r={1.8} fill={SAGE} opacity="0.85" />
+            <circle cx={7} cy={7} r={1.6} fill={SAGE} opacity="0.8" />
+            <circle cx={25} cy={7} r={1.6} fill={SAGE} opacity="0.8" />
+            <circle cx={11} cy={4} r={1.4} fill={SAGE} opacity="0.75" />
+            <circle cx={21} cy={4} r={1.4} fill={SAGE} opacity="0.75" />
           </g>
         );
       case 5:
         return (
           <g>
-            <path d={`M ${40*scale} ${92*scale} L ${40*scale} ${25*scale}`} stroke={BRANCH} strokeWidth={3.5*scale} strokeLinecap="round" />
-            <path d={`M ${40*scale} ${88*scale} Q ${14*scale} ${78*scale} ${5*scale} ${65*scale}`} stroke={BRANCH} strokeWidth={2.5*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${88*scale} Q ${66*scale} ${78*scale} ${75*scale} ${65*scale}`} stroke={BRANCH} strokeWidth={2.5*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${72*scale} Q ${18*scale} ${62*scale} ${8*scale} ${48*scale}`} stroke={BRANCH} strokeWidth={2.2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${72*scale} Q ${62*scale} ${62*scale} ${72*scale} ${48*scale}`} stroke={BRANCH} strokeWidth={2.2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${55*scale} Q ${24*scale} ${45*scale} ${14*scale} ${32*scale}`} stroke={BRANCH} strokeWidth={2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${55*scale} Q ${56*scale} ${45*scale} ${66*scale} ${32*scale}`} stroke={BRANCH} strokeWidth={2*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${40*scale} Q ${32*scale} ${30*scale} ${24*scale} ${18*scale}`} stroke={BRANCH} strokeWidth={1.5*scale} strokeLinecap="round" fill="none" />
-            <path d={`M ${40*scale} ${40*scale} Q ${48*scale} ${30*scale} ${56*scale} ${18*scale}`} stroke={BRANCH} strokeWidth={1.5*scale} strokeLinecap="round" fill="none" />
-            <circle cx={40*scale} cy={25*scale} r={5*scale} fill={GOLD} opacity="1" />
-            <circle cx={5*scale} cy={65*scale} r={3.5*scale} fill={GOLD} opacity="0.95" />
-            <circle cx={75*scale} cy={65*scale} r={3.5*scale} fill={GOLD} opacity="0.95" />
-            <circle cx={8*scale} cy={48*scale} r={3*scale} fill={GOLD} opacity="0.9" />
-            <circle cx={72*scale} cy={48*scale} r={3*scale} fill={GOLD} opacity="0.9" />
-            <circle cx={14*scale} cy={32*scale} r={2.5*scale} fill={SAGE} opacity="0.85" />
-            <circle cx={66*scale} cy={32*scale} r={2.5*scale} fill={SAGE} opacity="0.85" />
-            <circle cx={24*scale} cy={18*scale} r={2.5*scale} fill={SAGE} opacity="0.8" />
-            <circle cx={56*scale} cy={18*scale} r={2.5*scale} fill={SAGE} opacity="0.8" />
+            {/* Tronco elegante */}
+            <path d="M 16 28 L 16 5" stroke={BRANCH} strokeWidth={2.5} strokeLinecap="round" />
+
+            {/* Galhos principais - simétricos */}
+            <path d="M 16 25 Q 6 20 2 15" stroke={BRANCH} strokeWidth={1.8} strokeLinecap="round" fill="none" />
+            <path d="M 16 25 Q 26 20 30 15" stroke={BRANCH} strokeWidth={1.8} strokeLinecap="round" fill="none" />
+
+            {/* Galhos nível 2 */}
+            <path d="M 16 20 Q 8 15 4 10" stroke={BRANCH} strokeWidth={1.5} strokeLinecap="round" fill="none" />
+            <path d="M 16 20 Q 24 15 28 10" stroke={BRANCH} strokeWidth={1.5} strokeLinecap="round" fill="none" />
+
+            {/* Galhos nível 3 */}
+            <path d="M 16 14 Q 10 10 7 6" stroke={BRANCH} strokeWidth={1.3} strokeLinecap="round" fill="none" />
+            <path d="M 16 14 Q 22 10 25 6" stroke={BRANCH} strokeWidth={1.3} strokeLinecap="round" fill="none" />
+
+            {/* Galhos do topo */}
+            <path d="M 16 9 Q 13 6 11 3" stroke={BRANCH} strokeWidth={1.1} strokeLinecap="round" fill="none" />
+            <path d="M 16 9 Q 19 6 21 3" stroke={BRANCH} strokeWidth={1.1} strokeLinecap="round" fill="none" />
+
+            {/* Frutos dourados */}
+            <circle cx={16} cy={4} r={2.8} fill={GOLD} opacity="1" />
+            <circle cx={2} cy={15} r={2} fill={GOLD} opacity="0.95" />
+            <circle cx={30} cy={15} r={2} fill={GOLD} opacity="0.95" />
+            <circle cx={4} cy={10} r={1.8} fill={GOLD} opacity="0.9" />
+            <circle cx={28} cy={10} r={1.8} fill={GOLD} opacity="0.9" />
+            <circle cx={7} cy={6} r={1.6} fill={SAGE} opacity="0.85" />
+            <circle cx={25} cy={6} r={1.6} fill={SAGE} opacity="0.85" />
+            <circle cx={11} cy={3} r={1.4} fill={SAGE} opacity="0.8" />
+            <circle cx={21} cy={3} r={1.4} fill={SAGE} opacity="0.8" />
           </g>
         );
       default:
@@ -130,8 +139,8 @@ export default function MiniTree({ progress = 30, size = 32 }: MiniTreeProps) {
   };
 
   return (
-    <svg width={size} height={size * 1.375} viewBox={viewBox} className="block">
-      <ellipse cx={40*scale} cy={40} rx={6} ry={1.2} fill={SAGE} opacity="0.1" />
+    <svg width={size} height={height} viewBox="0 0 32 32" className="block overflow-visible">
+      <ellipse cx={16} cy={30} rx={5} ry={1} fill={SAGE} opacity="0.1" />
       {renderStage()}
     </svg>
   );

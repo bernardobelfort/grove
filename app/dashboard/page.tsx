@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Flame, TreeDeciduous, Zap } from 'lucide-react';
 import SkillTree from '@/components/SkillTree';
 import { employee } from '@/data/employee';
 import { getStageFromDay } from '@/data/skillTree';
@@ -28,21 +28,25 @@ export default function DashboardPage() {
       transition={{ duration: 0.2 }}
       className="h-screen flex flex-col"
     >
-      <div className="px-6 py-4 flex justify-between items-center border-b border-grove-border">
+      <div className="px-6 py-5 flex justify-between items-center border-b border-grove-border">
         <div>
-          <div className="text-[20px] font-semibold tracking-tight">
+          <div className="text-[22px] font-semibold tracking-tight">
             {getGreeting()}, {employee.name.split(' ')[0]}
           </div>
-          <div className="text-[11px] text-grove-text-muted mt-0.5 capitalize">
+          <div className="text-[11px] text-grove-text-muted mt-1 capitalize">
             {today}
           </div>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="text-[11px] text-grove-text-muted">
-            Dia {employee.day} da sua jornada
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.02] border border-grove-border">
+            <TreeDeciduous size={14} className="text-grove-sage" />
+            <span className="text-[11px] text-grove-text-muted">Dia</span>
+            <span className="text-[12px] font-semibold text-grove-sage">{employee.day}</span>
           </div>
-          <div className="px-3 py-1.5 rounded-lg bg-grove-sage/10 border border-grove-sage/20 text-[11px] text-grove-sage font-medium">
-            {employee.streak} dias seguidos
+          <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-grove-gold/[0.08] border border-grove-gold/20">
+            <Flame size={14} className="text-grove-gold" />
+            <span className="text-[12px] font-semibold text-grove-gold">{employee.streak}</span>
+            <span className="text-[11px] text-grove-text-muted">dias</span>
           </div>
         </div>
       </div>
