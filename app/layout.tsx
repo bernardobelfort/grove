@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} ${fraunces.variable} h-full antialiased`}>
       <head>
-        <title>Arvo.IA - IA Que Integra Pessoas</title>
+        <title>Arvo - IA Que Integra Pessoas</title>
         <meta name="description" content="A IA que integra pessoas e processos" />
       </head>
       <body className="h-screen flex overflow-hidden bg-grove-charcoal text-grove-text font-sans">
