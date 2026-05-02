@@ -23,8 +23,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} ${fraunces.variable} h-full antialiased`}>
       <head>
-        <title>Grove - Onboarding Inteligente</title>
-        <meta name="description" content="Plataforma de onboarding inteligente" />
+        <title>Arvo.IA - IA Que Integra Pessoas</title>
+        <meta name="description" content="A IA que integra pessoas e processos" />
       </head>
       <body className="h-screen flex overflow-hidden bg-grove-charcoal text-grove-text font-sans">
         <Sidebar />
